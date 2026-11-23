@@ -1,0 +1,17 @@
+column,type,description,origin
+CustomerID,text,Unique customer key (CUST-####),Raw
+Gender,category,Male / Female,Raw
+Age,int,Customer age in years (23-60 in sample),Raw
+TenureMonths,int,Months as a customer,Raw
+SubscriptionType,category,Basic / Pro / Enterprise plan,Raw
+MonthlyCharges,float,Monthly price; fixed per plan (49.99 / 79.99 / 149.99),Raw
+TotalCharges,float,Lifetime billed amount; equals Tenure x MonthlyCharges,Raw
+ContractType,category,Month-to-Month / One Year / Two Year,Raw
+SupportTickets,int,Number of support tickets raised,Raw
+PaymentMethod,category,Credit Card / Debit Card / Bank Transfer / UPI,Raw
+Churn,category,"Yes = customer left, No = retained",Raw
+Churn_Flag,int,1 if Churn = Yes else 0,Derived
+ExpectedTotal,float,TenureMonths x MonthlyCharges,Derived
+TotalCharges_Diff,float,TotalCharges - ExpectedTotal (0 = reconciles),Derived
+TenureBand,category,0-6 / 7-12 / 13-24 / 25-48 months,Derived
+AgeBand,category,18-30 / 31-40 / 41-50 / 51+,Derived
